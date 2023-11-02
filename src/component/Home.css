@@ -1,0 +1,25 @@
+/* Home.css */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
+    gap: 20px; /* Add some spacing between grid items */
+  }
+  
+  .grid-item {
+    text-align: center; /* Center-align items in the grid */
+    border: 1px solid #ccc; /* Add a border for each grid item */
+    padding: 20px; /* Add padding to the grid items */
+  }
+  
+  img {
+    max-width: 50%; /* Set the maximum width of images to 50% */
+  }
+  
+  .but {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
