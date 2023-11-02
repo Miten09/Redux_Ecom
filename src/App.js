@@ -12,7 +12,7 @@ function App() {
   const dispatch = useDispatch();
 
   const open = useSelector((state) => state.modal.isOpen);
-  console.log("OPENnnnnn111111", open);
+  console.log("OPEN", open);
 
   useEffect(() => {
     dispatch(calculateTotals());
