@@ -20,15 +20,6 @@ const Navbar = () => {
 
   const auth = useSelector((store) => store.auth.isAuth);
 
-  // useEffect(() => {
-  //   const storedAuth = localStorage.getItem("Login");
-  //   if (storedAuth) {
-  //     dispatch(authTrue());
-  //   } else {
-  //     dispatch(authFalse());
-  //   }
-  // }, []);
-
   return (
     <nav>
       <div className="nav-center">

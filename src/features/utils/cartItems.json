@@ -1,0 +1,453 @@
+{
+    "cartItems": [
+      {
+        "id": "rec1JZlfCIBOPdcT2",
+        "title": "Samsung Galaxy S8",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ75",
+        "title": "google pixel",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJ",
+        "title": "Xiaomi Redmi Note 2",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoW",
+        "title": "Samsung Galaxy S7",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT2qw",
+        "title": "Oppo",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ75ea",
+        "title": "Samsung",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJdc",
+        "title": "Xiaomi",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoWadw",
+        "title": "A p p l e",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT2ffg",
+        "title": "OnePlus",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ75ljth",
+        "title": "Vivo",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJxsw",
+        "title": "Realme",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoWpopop",
+        "title": "Motorola",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT2212",
+        "title": "Nokia",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ75vcmhm",
+        "title": "Google",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJaqaqa",
+        "title": "Lava",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoWpilf",
+        "title": "Honor",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT2zzw4yt2",
+        "title": "iQOO",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ75hjr53542e",
+        "title": "Micromax",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJbgge231",
+        "title": "Tecno",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoWiou21212",
+        "title": "Infinix",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT2fvfgvfg0898",
+        "title": "Poco",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ75vrg31218",
+        "title": "Asus",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJmmmmmm",
+        "title": "Huawei",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoWwfftttedre",
+        "title": "HTC",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT2sd97866",
+        "title": "YU",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ75dew1qw212",
+        "title": "Xolo",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJ909jkjuiu",
+        "title": "Sansui",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoWvdfge5t231",
+        "title": "LeEco",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT2vgret3786745",
+        "title": "LYF",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ7521212121212",
+        "title": "Videocon",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJ3333333333333",
+        "title": "Blackberry",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoWpikycw",
+        "title": "Swipe",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT21sqse1",
+        "title": "Spice",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ75bgbgbg121212",
+        "title": "Intex",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJpo0897867",
+        "title": "Karbonn",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoWdsf31232rx",
+        "title": "Intex",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT2d21212121",
+        "title": "Coolpad",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ75cfdef30909090",
+        "title": "google pixel",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJvfv1dew3",
+        "title": "Xiaomi Redmi Note 2",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoWr3212ui7yjr",
+        "title": "Samsung Galaxy S7",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT2vd5341",
+        "title": "Samsung Galaxy S8",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ75vdf433232",
+        "title": "google pixel",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJvdffe9090kuk",
+        "title": "Xiaomi Redmi Note 2",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoWedf212545",
+        "title": "Samsung Galaxy S7",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT2fdf98956656",
+        "title": "Samsung Galaxy S8",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ75121dvvdgryt",
+        "title": "google pixel",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJpopopop",
+        "title": "Xiaomi Redmi Note 2",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoWre121212",
+        "title": "Samsung Galaxy S7",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT2lo08787",
+        "title": "Samsung Galaxy S8",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ752qsse",
+        "title": "google pixel",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJfe341212",
+        "title": "Xiaomi Redmi Note 2",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoWbgr12dg2",
+        "title": "Samsung Galaxy S7",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      },
+      {
+        "id": "rec1JZlfCIBOPdcT23wed2tgf",
+        "title": "Samsung Galaxy S8",
+        "price": "399.99",
+        "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "amount": 0,
+        "max": 3
+      },
+      {
+        "id": "recB6qcHPxb62YJ75fedf75634",
+        "title": "google pixel",
+        "price": "499.99",
+        "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "amount": 0,
+        "max": 6
+      },
+      {
+        "id": "recdRxBsE14Rr2VuJfr978oujr",
+        "title": "Xiaomi Redmi Note 2",
+        "price": "699.99",
+        "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "amount": 0,
+        "max": 2
+      },
+      {
+        "id": "recwTo160XST3PIoW1wqgr",
+        "title": "Samsung Galaxy S7",
+        "price": "599.99",
+        "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "amount": 0,
+        "max": 10
+      }
+    ]
+  }
+  

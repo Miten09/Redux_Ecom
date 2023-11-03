@@ -1,7 +1,7 @@
 /* Home.css */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
+    grid-template-columns: repeat(4, 1fr); /* 2 columns with equal width */
     gap: 20px; /* Add some spacing between grid items */
   }
   
