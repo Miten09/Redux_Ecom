@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ChevronDown, ChevronUp } from "../icons";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { decrease, increase, removeItem } from "../features/cart/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 const CartItem = ({ id, img, title, price, amount, max }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <article className="cart-item">

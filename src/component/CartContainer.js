@@ -4,14 +4,22 @@ import { useDispatch, useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import { clearCart } from "../features/cart/cartSlice";
 import { closeModal, openModal } from "../features/modal/modalSlice";
+import { useNavigate } from "react-router-dom";
 
 const CartContainer = () => {
   const dispatch = useDispatch();
   const { cartItems, amount, total } = useSelector((store) => store.cart);
+  const navigate = useNavigate();
 
   function handleClear() {
     dispatch(openModal());
   }
+
+  useEffect(() => {
+    if (!localStorage.getItem("Login")) {
+      navigate("/login");
+    }
+  }, []);
 
   if (amount < 1) {
     return (

@@ -41,6 +41,8 @@ const cartItems = [
 function CartItems() {
   const cartItemAmounts = useSelector((store) => store.cart.cartItems);
   const dispatch = useDispatch();
+  const auth = useSelector((store) => store.auth.isAuth);
+
   return (
     <div className="grid-container">
       {cartItems.map((val, index) => {
@@ -50,23 +52,27 @@ function CartItems() {
             <img src={val.img} alt="phones" />
             <p>{val.title}</p>
             <p>Rs - {val.price} Only</p>
-            <p>{cartItem ? cartItem.amount : 0}</p>
-            {cartItem && cartItem.amount === cartItem.max ? (
-              <button disabled className="but">
-                Max Cart Limit Reached
-              </button>
-            ) : (
-              <button
-                className="but"
-                onClick={() => {
-                  if (!cartItem) {
-                    dispatch(addItem(val.id));
-                  }
-                  dispatch(increase(val.id));
-                }}
-              >
-                Add to Cart
-              </button>
+            {auth && (
+              <>
+                <p>{cartItem ? cartItem.amount : 0}</p>
+                {cartItem && cartItem.amount === cartItem.max ? (
+                  <button disabled className="but">
+                    Max Cart Limit Reached
+                  </button>
+                ) : (
+                  <button
+                    className="but"
+                    onClick={() => {
+                      if (!cartItem) {
+                        dispatch(addItem(val.id));
+                      }
+                      dispatch(increase(val.id));
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                )}
+              </>
             )}
           </div>
         );
