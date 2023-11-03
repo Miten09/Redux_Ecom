@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp } from "../icons";
 import { useDispatch } from "react-redux";
 import { decrease, increase, removeItem } from "../features/cart/cartSlice";
 
-const CartItem = ({ id, img, title, price, amount }) => {
+const CartItem = ({ id, img, title, price, amount, max }) => {
   const dispatch = useDispatch();
 
   return (
@@ -24,7 +24,7 @@ const CartItem = ({ id, img, title, price, amount }) => {
             </button>
           </div>
           <div>
-            {amount === 5 ? (
+            {amount === max ? (
               <button
                 disabled
                 className="amount-btn"
@@ -44,7 +44,6 @@ const CartItem = ({ id, img, title, price, amount }) => {
                 <ChevronUp />
               </button>
             )}
-
             <p className="amount">{amount}</p>
             <button
               className="amount-btn"

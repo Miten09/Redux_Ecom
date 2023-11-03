@@ -7,6 +7,7 @@ const cartItems = [
     price: "399.99",
     img: "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
     amount: 0,
+    max: 3,
   },
   {
     id: "recB6qcHPxb62YJ75",
@@ -14,6 +15,7 @@ const cartItems = [
     price: "499.99",
     img: "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
     amount: 0,
+    max: 6,
   },
   {
     id: "recdRxBsE14Rr2VuJ",
@@ -21,6 +23,7 @@ const cartItems = [
     price: "699.99",
     img: "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
     amount: 0,
+    max: 2,
   },
   {
     id: "recwTo160XST3PIoW",
@@ -28,6 +31,7 @@ const cartItems = [
     price: "599.99 ",
     img: "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
     amount: 0,
+    max: 10,
   },
 ];
 

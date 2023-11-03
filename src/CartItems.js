@@ -10,6 +10,7 @@ const cartItems = [
     price: "399.99",
     img: "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
     amount: 1,
+    max: 3,
   },
   {
     id: "recB6qcHPxb62YJ75",
@@ -17,6 +18,7 @@ const cartItems = [
     price: "499.99",
     img: "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
     amount: 1,
+    max: 6,
   },
   {
     id: "recdRxBsE14Rr2VuJ",
@@ -24,6 +26,7 @@ const cartItems = [
     price: "699.99",
     img: "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
     amount: 1,
+    max: 2,
   },
   {
     id: "recwTo160XST3PIoW",
@@ -31,24 +34,24 @@ const cartItems = [
     price: "599.99 ",
     img: "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
     amount: 1,
+    max: 10,
   },
 ];
 
 function CartItems() {
   const cartItemAmounts = useSelector((store) => store.cart.cartItems);
-  console.log("Cart Item Amounts:", cartItemAmounts);
   const dispatch = useDispatch();
   return (
     <div className="grid-container">
       {cartItems.map((val, index) => {
         const cartItem = cartItemAmounts.find((item) => item.id === val.id);
-        console.log("IOIOIOIOIOI", cartItem);
         return (
           <div key={index} className="grid-item">
             <img src={val.img} alt="phones" />
             <p>{val.title}</p>
+            <p>Rs - {val.price} Only</p>
             <p>{cartItem ? cartItem.amount : 0}</p>
-            {cartItem && cartItem.amount === 5 ? (
+            {cartItem && cartItem.amount === cartItem.max ? (
               <button disabled className="but">
                 Max Cart Limit Reached
               </button>
