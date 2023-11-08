@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { closeModal } from "../features/modal/modalSlice";
-import { clearCart } from "../features/cart/cartSlice";
+import {
+  allCartItemsAmountZero,
+  clearCart,
+  purchaseItems,
+} from "../features/cart/cartSlice";
 
 const Modal = () => {
   const dispatch = useDispatch();
@@ -13,13 +17,13 @@ const Modal = () => {
   return (
     <aside className="modal-container" onClick={closeModalHandler}>
       <div className="modal">
-        <h4>Remove all items from your shopping cart?</h4>
+        <h4>Confirm Purchase?</h4>
         <div className="btn-container">
           <button
             type="button"
             className="btn confirm-btn"
             onClick={() => {
-              dispatch(clearCart());
+              dispatch(purchaseItems());
               dispatch(closeModal());
             }}
           >

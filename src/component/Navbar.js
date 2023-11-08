@@ -19,15 +19,21 @@ const Navbar = () => {
   }
 
   const auth = useSelector((store) => store.auth.isAuth);
+  const userRole = localStorage.getItem("Login");
 
   return (
     <nav>
       <div className="nav-center">
-        <NavLink to="/home" style={{ color: "black" }}>
+        {auth && userRole == "admin" && (
+          <NavLink to="/admin" style={{ color: "white" }}>
+            Admin
+          </NavLink>
+        )}
+        <NavLink to="/home" style={{ color: "white" }}>
           Home
         </NavLink>
         {!auth && (
-          <NavLink to="/login" style={{ color: "black" }}>
+          <NavLink to="/login" style={{ color: "white" }}>
             Login
           </NavLink>
         )}

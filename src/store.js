@@ -7,7 +7,7 @@ import { persistReducer } from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
 
 const persistConfig = {
-  key: "root",
+  key: "auth",
   version: 1,
   storage,
 };

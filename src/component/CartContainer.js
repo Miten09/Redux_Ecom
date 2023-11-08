@@ -8,7 +8,9 @@ import { useNavigate } from "react-router-dom";
 
 const CartContainer = () => {
   const dispatch = useDispatch();
-  const { cartItems, amount, total } = useSelector((store) => store.cart);
+  const { cartItems, amount, total, addToCart } = useSelector(
+    (store) => store.cart
+  );
   const navigate = useNavigate();
 
   function handleClear() {
@@ -31,14 +33,16 @@ const CartContainer = () => {
       </section>
     );
   }
+
   return (
     <section className="cart">
       <header>
         <h2>your bag</h2>
       </header>
       <div>
-        {cartItems.map((item) => {
-          return <CartItem key={item.id} {...item} />;
+        {addToCart?.map((item) => {
+          const amount = cartItems?.find((val) => val.id === item.id);
+          return <CartItem key={item.id} {...item} upda={amount} />;
         })}
       </div>
       <footer>
@@ -49,7 +53,7 @@ const CartContainer = () => {
           </h4>
         </div>
         <button className="btn clear-btn" onClick={handleClear}>
-          clear cart
+          Purchase Items
         </button>
       </footer>
     </section>

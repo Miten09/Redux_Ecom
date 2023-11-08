@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { authTrue } from "../features/auth/authSlice";
+import { LoginCart } from "../features/cart/cartSlice";
 
 const Login = () => {
   const [name, setName] = useState("");
@@ -11,11 +12,34 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const authorization = {
+    auth: [
+      {
+        name: "karan",
+        password: 1234,
+        role: "user",
+      },
+      {
+        name: "miten",
+        password: 1234,
+        role: "admin",
+      },
+      {
+        name: "zeel",
+        password: 5678,
+        role: "user",
+      },
+    ],
+  };
+
   const handleLogin = () => {
-    if (name === "miten" && password === "1234") {
+    const auth = authorization.auth.filter((val) => val.name === name);
+
+    if (auth[0].name == name && auth[0].password == password) {
       dispatch(authTrue());
+      dispatch(LoginCart());
       navigate("/home");
-      localStorage.setItem("Login", name);
+      localStorage.setItem("Login", auth[0].role);
     }
   };
 

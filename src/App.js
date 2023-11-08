@@ -7,16 +7,17 @@ import Modal from "./component/Modal";
 import { Route, Router, Routes } from "react-router-dom";
 import CartItems from "./CartItems";
 import Login from "./component/Login";
+import Admin from "./component/Admin";
 
 function App() {
-  const { cartItems } = useSelector((state) => state.cart);
+  const { cartItems, addToCart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   const open = useSelector((state) => state.modal.isOpen);
 
   useEffect(() => {
     dispatch(calculateTotals());
-  }, [cartItems]);
+  }, [cartItems, addToCart]);
 
   return (
     <>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/home" element={<CartItems />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<CartContainer />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Login />} />
       </Routes>
     </>

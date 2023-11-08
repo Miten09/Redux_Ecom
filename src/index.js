@@ -15,9 +15,9 @@ let persistor = persistStore(store);
 root.render(
   <BrowserRouter>
     <Provider store={store}>
-      <PersistGate persistor={persistor}>
-        <App />
-      </PersistGate>
+      {/* <PersistGate persistor={persistor}> */}
+      <App />
+      {/* </PersistGate> */}
     </Provider>
   </BrowserRouter>
 );

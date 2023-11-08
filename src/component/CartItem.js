@@ -1,16 +1,22 @@
 import React, { useEffect } from "react";
 import { ChevronDown, ChevronUp } from "../icons";
 import { useDispatch, useSelector } from "react-redux";
-import { decrease, increase, removeItem } from "../features/cart/cartSlice";
+import {
+  cartItemZero,
+  decrease,
+  increase,
+  removeItem,
+  removeItemHome,
+} from "../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 
-const CartItem = ({ id, img, title, price, amount, max }) => {
+const CartItem = ({ id, img, title, price, amount, max, upda }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   return (
     <article className="cart-item">
-      {amount !== 0 && (
+      {upda?.amount !== 0 && (
         <>
           <img src={img} alt={title} />
           <div>
@@ -20,13 +26,14 @@ const CartItem = ({ id, img, title, price, amount, max }) => {
               className="remove-btn"
               onClick={() => {
                 dispatch(removeItem(id));
+                dispatch(cartItemZero(id));
               }}
             >
               remove
             </button>
           </div>
           <div>
-            {amount === max ? (
+            {upda?.amount === max ? (
               <button
                 disabled
                 className="amount-btn"
@@ -46,7 +53,7 @@ const CartItem = ({ id, img, title, price, amount, max }) => {
                 <ChevronUp />
               </button>
             )}
-            <p className="amount">{amount}</p>
+            <p className="amount">{upda?.amount}</p>
             <button
               className="amount-btn"
               onClick={() => {

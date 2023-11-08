@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../src/component/Home.css";
-import { addItem, increase } from "./features/cart/cartSlice";
+import {
+  LoginCart,
+  addItem,
+  addItemToCart,
+  increase,
+} from "./features/cart/cartSlice";
 import cartItems from "./features/utils/cartItems.json";
 import { useInView } from "react-intersection-observer";
+import { allCartItems } from "./features/cart/cartSlice";
 
 function CartItems() {
   const cartItemAmounts = useSelector((store) => store.cart.cartItems);
   const dispatch = useDispatch();
   const auth = useSelector((store) => store.auth.isAuth);
   const [displayedItems, setDisplayedItems] = useState(8);
+  const data = useSelector((store) => store.cart.cartItems);
 
   const [inViewRef, inView] = useInView();
 
@@ -19,11 +26,17 @@ function CartItems() {
     }
   }, [inView]);
 
-  const display = cartItems.cartItems.slice(0, displayedItems);
+  // const cartItemsFromJson = allCartItems();
+  // console.log("CARTITEMSFROMJSON", data);
+  const display = data.slice(0, displayedItems);
+
+  const maxAmountNotZero = display.filter((val) => val.max > 0);
+  console.log("maxAmountNotZero", maxAmountNotZero);
+
   return (
     <div className="grid-container">
-      {display.map((val, index) => {
-        const cartItem = cartItemAmounts.find((item) => item.id === val.id);
+      {maxAmountNotZero.map((val, index) => {
+        const cartItem = cartItemAmounts?.find((item) => item.id === val.id);
         return (
           <div key={index} className="grid-item">
             <img src={val.img} alt="phones" />
@@ -40,10 +53,8 @@ function CartItems() {
                   <button
                     className="but"
                     onClick={() => {
-                      if (!cartItem) {
-                        dispatch(addItem(val.id));
-                      }
                       dispatch(increase(val.id));
+                      dispatch(addItemToCart());
                     }}
                   >
                     Add to Cart
