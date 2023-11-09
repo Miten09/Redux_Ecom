@@ -6,13 +6,14 @@ import {
   addOneItemsToCart,
   addOneItemsToHome,
 } from "../features/cart/cartSlice";
+import { v4 as uuidv4 } from "uuid";
 
 const AddNewItems = () => {
-  const [id, setId] = useState();
+  const [id, setId] = useState(uuidv4());
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [img, setImg] = useState("");
-  const [amount, setAmount] = useState();
+  const [amount, setAmount] = useState(0);
   const [max, setMax] = useState();
   const dispatch = useDispatch();
 
@@ -28,16 +29,6 @@ const AddNewItems = () => {
 
   return (
     <div className="container">
-      <label for="id">ID:</label>
-      <input
-        type="text"
-        id="id"
-        name="id"
-        value={id}
-        onChange={(e) => setId(parseInt(e.target.value))}
-      />
-      <br />
-      <br />
       <label for="title">Title:</label>
       <input
         type="text"

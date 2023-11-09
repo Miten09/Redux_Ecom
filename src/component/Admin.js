@@ -20,7 +20,6 @@ const Admin = () => {
   }, []);
   console.log("DATAAAA", data);
 
-  const cartItemsFromJson = allCartItems();
   const dispatch = useDispatch();
 
   return (
@@ -31,6 +30,7 @@ const Admin = () => {
             <div key={index} className="grid-item">
               <img src={val.img} alt="phones" />
               <p>{val.title}</p>
+              <p>Items Remaining - {val.max}</p>
               <p>Rs - {val.price} Only</p>
               <button
                 style={{

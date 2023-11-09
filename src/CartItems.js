@@ -31,7 +31,6 @@ function CartItems() {
   const display = data.slice(0, displayedItems);
 
   const maxAmountNotZero = display.filter((val) => val.max > 0);
-  console.log("maxAmountNotZero", maxAmountNotZero);
 
   return (
     <div className="grid-container">
