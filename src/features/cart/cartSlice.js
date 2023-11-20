@@ -13,6 +13,7 @@ export function allCartItems() {
 const initialState = {
   cartItems: allCartItems(),
   addToCart: allCartItems(),
+  adminFields: "",
   amount: 0,
   total: 0,
   isLoading: true,
@@ -24,6 +25,9 @@ const cartSlice = createSlice({
   reducers: {
     clearCart: (state) => {
       state.addToCart = [];
+    },
+    clearAdminFields: (state) => {
+      state.adminFields = "";
     },
     LoginCart: (state) => {
       state.cartItems = allCartItems();
@@ -78,6 +82,38 @@ const cartSlice = createSlice({
         item.amount = 0;
       });
     },
+    edit: (state, action) => {
+      const itemId = action.payload;
+      const cartItem = state.cartItems.find((item) => item.id === itemId);
+      state.adminFields = cartItem;
+    },
+    update: (state, action) => {
+      const { idOfEdit, title, price, img, amount, max } = action.payload;
+      state.cartItems.forEach((item) => {
+        if (item.id == idOfEdit) {
+          item.title = title;
+          item.price = price;
+          item.img = img;
+          item.amount = amount;
+          item.max = max;
+        }
+      });
+    },
+    maxAmountIncrease: (state, action) => {
+      const cartItem = state.cartItems.find(
+        (item) => item.id === action.payload
+      );
+      cartItem.max = cartItem.max + 1;
+    },
+    maxAmountDecrease: (state, action) => {
+      const cartItem = state.cartItems.find(
+        (item) => item.id === action.payload
+      );
+      if (cartItem.amount === cartItem.max) {
+        cartItem.amount = 0;
+      }
+      cartItem.max = cartItem.max - 1;
+    },
   },
 });
 
@@ -94,6 +130,11 @@ export const {
   addItemToCart,
   deleteoneItemFromAdmin,
   purchaseItems,
+  edit,
+  clearAdminFields,
+  update,
+  maxAmountIncrease,
+  maxAmountDecrease,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

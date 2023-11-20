@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./AddNewItems.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addOneItems,
   addOneItemsToCart,
   addOneItemsToHome,
+  clearAdminFields,
+  edit,
+  update,
 } from "../features/cart/cartSlice";
 import { v4 as uuidv4 } from "uuid";
 
@@ -15,7 +18,27 @@ const AddNewItems = () => {
   const [img, setImg] = useState("");
   const [amount, setAmount] = useState(0);
   const [max, setMax] = useState();
+
   const dispatch = useDispatch();
+
+  let editFields = useSelector((store) => store.cart.adminFields);
+  let all = useSelector((store) => store.cart.cartItems);
+
+  // const [editFields, setEditFields] = useState();
+  console.log("IMAGE", img);
+  console.log("EDIT", editFields);
+
+  const idOfEdit = editFields.id;
+
+  useEffect(() => {
+    if (editFields) {
+      setTitle(editFields?.title);
+      setPrice(editFields?.price);
+      setImg(editFields?.img);
+      setMax(editFields?.max);
+      setAmount(editFields?.amount);
+    }
+  }, [editFields]);
 
   function handleSubmit() {
     dispatch(addOneItemsToHome({ id, title, price, img, amount, max }));
@@ -26,6 +49,30 @@ const AddNewItems = () => {
     setAmount("");
     setMax("");
   }
+
+  function handleReset() {
+    setId("");
+    setTitle("");
+    setPrice("");
+    setImg("");
+    setAmount("");
+    setMax("");
+    dispatch(clearAdminFields());
+  }
+
+  function handleUpdate() {
+    dispatch(update({ idOfEdit, title, price, img, amount, max }));
+    dispatch(clearAdminFields());
+    setId("");
+    setTitle("");
+    setPrice("");
+    setImg("");
+    setAmount("");
+    setMax("");
+  }
+
+  // let cartItem = all.find((item) => item.id === editFields.id);
+  // console.log("cartItem", cartItem?.title);
 
   return (
     <div className="container">
@@ -66,6 +113,7 @@ const AddNewItems = () => {
           }
         }}
       />
+      <img src={img} />
       <br />
       <br />
       <label for="Amount">Amount:</label>
@@ -74,7 +122,7 @@ const AddNewItems = () => {
         id="Amount"
         name="Amount"
         value={amount}
-        onChange={(e) => setAmount(parseInt(e.target.value))}
+        onChange={(e) => setAmount(Number(e.target.value))}
       />
       <br />
       <br />
@@ -84,13 +132,26 @@ const AddNewItems = () => {
         id="maxAmount"
         name="maxAmount"
         value={max}
-        onChange={(e) => setMax(parseInt(e.target.value))}
+        onChange={(e) => setMax(Number(e.target.value))}
       />
       <br />
       <br />
-      <button className="but" onClick={handleSubmit}>
-        Submit
-      </button>
+      {editFields ? (
+        <button className="but" onClick={handleUpdate}>
+          Update
+        </button>
+      ) : (
+        <button className="but" onClick={handleSubmit}>
+          Submit
+        </button>
+      )}
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input
+        type="reset"
+        value="Clear"
+        className="but"
+        onClick={handleReset}
+      ></input>
     </div>
   );
 };

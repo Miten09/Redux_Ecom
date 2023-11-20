@@ -23,6 +23,8 @@ const CartContainer = () => {
     }
   }, []);
 
+  console.log("ADDTOCART", addToCart);
+
   if (amount < 1) {
     return (
       <section className="cart">
