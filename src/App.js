@@ -8,6 +8,7 @@ import { Route, Router, Routes } from "react-router-dom";
 import CartItems from "./CartItems";
 import Login from "./component/Login";
 import Admin from "./component/Admin";
+import AddingBalance from "./component/AddingBalance";
 
 function App() {
   const { cartItems, addToCart, adminFields } = useSelector(
@@ -30,6 +31,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<CartContainer />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/balance" element={<AddingBalance />} />
         <Route path="*" element={<Login />} />
       </Routes>
     </>

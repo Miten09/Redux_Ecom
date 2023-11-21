@@ -5,10 +5,11 @@ import CartItem from "./CartItem";
 import { clearCart } from "../features/cart/cartSlice";
 import { closeModal, openModal } from "../features/modal/modalSlice";
 import { useNavigate } from "react-router-dom";
+import { Modal } from "@mui/material";
 
 const CartContainer = () => {
   const dispatch = useDispatch();
-  const { cartItems, amount, total, addToCart } = useSelector(
+  const { cartItems, amount, total, addToCart, myBalance } = useSelector(
     (store) => store.cart
   );
   const navigate = useNavigate();
@@ -23,13 +24,15 @@ const CartContainer = () => {
     }
   }, []);
 
-  console.log("ADDTOCART", addToCart);
+  console.log("Balance", myBalance);
+  console.log("Total", total);
 
   if (amount < 1) {
     return (
       <section className="cart">
         <header>
-          <h2>Your Bag</h2>
+          <h2>Your Balance = {myBalance.toFixed(2)}</h2>
+          <h2>Your Bag </h2>
           <h4 className="empty-cart">is currently empty</h4>
         </header>
       </section>
@@ -39,6 +42,7 @@ const CartContainer = () => {
   return (
     <section className="cart">
       <header>
+        <h2>Your Balance = {myBalance.toFixed(2)} </h2>
         <h2>your bag</h2>
       </header>
       <div>

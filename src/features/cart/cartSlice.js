@@ -13,6 +13,7 @@ export function allCartItems() {
 const initialState = {
   cartItems: allCartItems(),
   addToCart: allCartItems(),
+  myBalance: 3000,
   adminFields: "",
   amount: 0,
   total: 0,
@@ -25,6 +26,7 @@ const cartSlice = createSlice({
   reducers: {
     clearCart: (state) => {
       state.addToCart = [];
+      state.myBalance = 3000;
     },
     clearAdminFields: (state) => {
       state.adminFields = "";
@@ -114,6 +116,13 @@ const cartSlice = createSlice({
       }
       cartItem.max = cartItem.max - 1;
     },
+    balanceDeducted: (state, action) => {
+      state.myBalance = state.myBalance - state.total;
+    },
+    addBalance: (state, action) => {
+      const balance = action.payload;
+      state.myBalance = state.myBalance + Number(balance);
+    },
   },
 });
 
@@ -135,6 +144,8 @@ export const {
   update,
   maxAmountIncrease,
   maxAmountDecrease,
+  balanceDeducted,
+  addBalance,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
