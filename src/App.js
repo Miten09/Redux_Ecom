@@ -9,6 +9,7 @@ import CartItems from "./CartItems";
 import Login from "./component/Login";
 import Admin from "./component/Admin";
 import AddingBalance from "./component/AddingBalance";
+import WishListItems from "./component/WishListItems";
 
 function App() {
   const { cartItems, addToCart, adminFields } = useSelector(
@@ -32,6 +33,7 @@ function App() {
         <Route path="/cart" element={<CartContainer />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/balance" element={<AddingBalance />} />
+        <Route path="/wishlist" element={<WishListItems />} />
         <Route path="*" element={<Login />} />
       </Routes>
     </>

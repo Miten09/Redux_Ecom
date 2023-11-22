@@ -32,6 +32,11 @@ const Navbar = () => {
         <NavLink to="/home" style={{ color: "white" }}>
           Home
         </NavLink>
+        {auth && (
+          <NavLink to="/wishlist" style={{ color: "white" }}>
+            Wishlists
+          </NavLink>
+        )}
         {!auth && (
           <NavLink to="/login" style={{ color: "white" }}>
             Login

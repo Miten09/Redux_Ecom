@@ -13,6 +13,7 @@ export function allCartItems() {
 const initialState = {
   cartItems: allCartItems(),
   addToCart: allCartItems(),
+  wishList: [],
   myBalance: 3000,
   adminFields: "",
   amount: 0,
@@ -26,6 +27,7 @@ const cartSlice = createSlice({
   reducers: {
     clearCart: (state) => {
       state.addToCart = [];
+      state.wishList = [];
       state.myBalance = 3000;
     },
     clearAdminFields: (state) => {
@@ -123,6 +125,15 @@ const cartSlice = createSlice({
       const balance = action.payload;
       state.myBalance = state.myBalance + Number(balance);
     },
+    addWishListItems: (state, action) => {
+      const id = action.payload;
+      const findItem = state.cartItems.find((item) => item.id === id);
+      state.wishList.push(findItem);
+    },
+    removeWishListItems: (state, action) => {
+      const id = action.payload;
+      state.wishList = state.wishList.filter((item) => item.id !== id);
+    },
   },
 });
 
@@ -146,6 +157,8 @@ export const {
   maxAmountDecrease,
   balanceDeducted,
   addBalance,
+  addWishListItems,
+  removeWishListItems,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
