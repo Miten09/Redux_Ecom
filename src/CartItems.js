@@ -9,6 +9,8 @@ import {
 } from "./features/cart/cartSlice";
 import cartItems from "./features/utils/cartItems.json";
 import { useInView } from "react-intersection-observer";
+import Star from "./component/Star";
+import "./CartItems.css";
 
 function CartItems() {
   const cartItemAmounts = useSelector((store) => store.cart.cartItems);
@@ -32,7 +34,7 @@ function CartItems() {
 
   const maxAmountNotZero = display.filter((val) => val.max > 0);
 
-  console.log("WISH", wishListItems);
+  console.log("maxAmountNotZero", maxAmountNotZero);
 
   return (
     <div className="grid-container">
@@ -40,60 +42,69 @@ function CartItems() {
         const cartItem = cartItemAmounts?.find((item) => item.id === val.id);
         return (
           <div key={index} className="grid-item">
-            <img src={val.img} alt="phones" />
-            <p>{val.title}</p>
-            <p>Rs - {val.price} Only</p>
-            {auth && (
-              <>
-                <p>{cartItem ? cartItem.amount : 0}</p>
-                {cartItem && cartItem.amount === cartItem.max ? (
-                  <button disabled className="but">
-                    Max Cart Limit Reached
-                  </button>
-                ) : (
-                  <button
-                    className="but"
-                    onClick={() => {
-                      dispatch(increase(val.id));
-                      dispatch(addItemToCart());
-                    }}
-                  >
-                    Add to Cart
-                  </button>
-                )}
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                {wishListItems.map((items) => {
-                  if (items.id === val.id) {
-                    return (
-                      <>
-                        <button
-                          className="butremove"
-                          onClick={() => {
-                            dispatch(removeWishListItems(items.id));
-                          }}
-                        >
-                          Remove from Wishlist
-                        </button>
-                      </>
-                    );
-                  } else {
-                    return null;
-                  }
-                })}
-                {wishListItems.find((items) => items.id === val.id) ? (
-                  ""
-                ) : (
-                  <button
-                    className="butwish"
-                    onClick={() => {
-                      dispatch(addWishListItems(val.id));
-                    }}
-                  >
-                    Add to Wishlist
-                  </button>
-                )}
-              </>
-            )}
+            <div className="item-container">
+              {val.stars >= 4.5 && <p className="bestseller">BestSeller</p>}
+              <img src={val.img} alt="phones" />
+              <p>{val.title}</p>
+              <p>Rs - {val.price}</p>
+              <Star star={val.stars} />
+              {auth && (
+                <>
+                  <p>Selected - {cartItem ? cartItem.amount : 0}</p>
+                  {val.max <= 2 && (
+                    <h5 style={{ color: "red", fontSize: "15px" }}>
+                      <b>Only Few Left</b>
+                    </h5>
+                  )}
+                  {cartItem && cartItem.amount === cartItem.max ? (
+                    <button disabled className="but">
+                      Max Cart Limit Reached
+                    </button>
+                  ) : (
+                    <button
+                      className="but"
+                      onClick={() => {
+                        dispatch(increase(val.id));
+                        dispatch(addItemToCart());
+                      }}
+                    >
+                      Add to Cart
+                    </button>
+                  )}
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  {wishListItems.map((items) => {
+                    if (items.id === val.id) {
+                      return (
+                        <>
+                          <button
+                            className="butremove"
+                            onClick={() => {
+                              dispatch(removeWishListItems(items.id));
+                            }}
+                          >
+                            Remove from Wishlist
+                          </button>
+                        </>
+                      );
+                    } else {
+                      return null;
+                    }
+                  })}
+                  {wishListItems.find((items) => items.id === val.id) ? (
+                    ""
+                  ) : (
+                    <button
+                      className="butwish"
+                      onClick={() => {
+                        dispatch(addWishListItems(val.id));
+                      }}
+                    >
+                      Add to Wishlist
+                    </button>
+                  )}
+                </>
+              )}
+            </div>
           </div>
         );
       })}

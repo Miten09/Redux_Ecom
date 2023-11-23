@@ -15,13 +15,24 @@ const WishListItems = () => {
     }
   }, []);
 
+  const gridContainerStyle = {
+    display: "flex",
+    flexWrap: "wrap",
+    width: "100%",
+  };
+
+  const gridItemStyle = {
+    flexBasis: "calc(25% - 20px)",
+    textAlign: "center",
+  };
+
   return (
     <>
       {select.length > 0 ? (
-        <div style={{ width: "30%" }}>
+        <div style={gridContainerStyle}>
           {select.map((val, index) => {
             return (
-              <div key={index} className="grid-item">
+              <div key={index} className="grid-item" style={gridItemStyle}>
                 <img src={val.img} alt="phones" />
                 <p>{val.title}</p>
                 <p>Rs - {val.price} Only</p>

@@ -6,6 +6,8 @@
         "price": "399",
         "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
         "amount": 0,
+        "stars":4.5,
+        "reviews":60,
         "max": 3
       },
       {
@@ -14,6 +16,8 @@
         "price": "499",
         "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
         "amount": 0,
+        "stars":4,
+        "reviews":30,
         "max": 6
       },
       {
@@ -22,6 +26,8 @@
         "price": "699",
         "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
         "amount": 0,
+        "stars":3,
+        "reviews":100,
         "max": 2
       },
       {
@@ -30,7 +36,29 @@
         "price": "599",
         "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
         "amount": 0,
+        "stars":4.8,
+        "reviews":80,
         "max": 10
+      },
+      {
+        "id": "recwTo160XST3PIoWwqw1uyitnt",
+        "title": "Motorola G2",
+        "price": "999",
+        "img": "https://5.imimg.com/data5/SELLER/Default/2021/9/WI/ZP/XB/58263536/motorola-smart-phone.jpg",
+        "amount": 0,
+        "stars":5,
+        "reviews":120,
+        "max": 5
+      },
+      {
+        "id": "recwTo160XST3PIoWwqfkpnqjwqm",
+        "title": "OnePlus 10 Pro",
+        "price": "1299",
+        "img": "https://m.economictimes.com/thumb/msid-102636785,width-1200,height-1200,resizemode-4,imgsize-63600/top-6-oneplus-phones-under-40000.jpg",
+        "amount": 0,
+        "stars":3.5,
+        "reviews":45,
+        "max": 12
       }
     ]
   }
