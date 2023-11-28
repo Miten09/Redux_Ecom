@@ -14,24 +14,12 @@ const PurchasedItems = () => {
 
   const dispatch = useDispatch();
 
-  // const final = purchased
-  //   .map((item) => {
-  //     const correspondingItem = temp.find((val) => val.id === item.id);
-  //     if (correspondingItem.max !== item.max) {
-  //       return {
-  //         ...item,
-  //         purchased: correspondingItem.max - item.max,
-  //       };
-  //     }
-  //   })
-  //   .filter(Boolean);
-
-  // console.log(">>>>>", final);
+  const purchaseAmount = purchased.filter((item) => item.amount > 0);
 
   return (
     <>
       <div className="purchased-items-container">
-        {purchased.length === 0 ? (
+        {purchaseAmount.length === 0 ? (
           <h2 style={{ marginTop: "20px" }}>No Items is Purchased</h2>
         ) : (
           purchased?.map((items, index) => {
