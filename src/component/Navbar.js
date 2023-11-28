@@ -37,6 +37,11 @@ const Navbar = () => {
             Wishlists
           </NavLink>
         )}
+        {auth && (
+          <NavLink to="/purchased" style={{ color: "white" }}>
+            Purchased
+          </NavLink>
+        )}
         {!auth && (
           <NavLink to="/login" style={{ color: "white" }}>
             Login

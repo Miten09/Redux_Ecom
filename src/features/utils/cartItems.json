@@ -3,62 +3,62 @@
       {
         "id": "rec1JZlfCIBOPdcT2dwwd",
         "title": "Samsung Galaxy S8",
-        "price": "399",
+        "price": 400,
         "img": "https://images2.imgbox.com/c2/14/zedmXgs6_o.png",
+        "company":"samsung",
         "amount": 0,
         "stars":4.5,
-        "reviews":60,
+        "return":0,
+        "Balance":0,
         "max": 3
       },
       {
         "id": "recB6qcHPxb62YJ75ew",
-        "title": "google pixel",
-        "price": "499",
+        "title": "Google pixel",
+        "price": 500,
         "img": "https://images2.imgbox.com/fb/3d/O4TPmhlt_o.png",
+        "company":"google",
         "amount": 0,
         "stars":4,
-        "reviews":30,
+        "return":0,
+        "Balance":0,
         "max": 6
       },
       {
         "id": "recdRxBsE14Rr2VuJcad",
         "title": "Xiaomi Redmi Note 2",
-        "price": "699",
+        "price": 700,
         "img": "https://images2.imgbox.com/4f/3d/WN3GvciF_o.png",
+        "company":"redmi",
         "amount": 0,
         "stars":3,
-        "reviews":100,
+        "return":0,
+        "Balance":0,
         "max": 2
       },
       {
         "id": "recwTo160XST3PIoWwqw1",
         "title": "Samsung Galaxy S7",
-        "price": "599",
+        "price": 600,
         "img": "https://images2.imgbox.com/2e/7c/yFsJ4Zkb_o.png",
+        "company":"samsung",
         "amount": 0,
         "stars":4.8,
-        "reviews":80,
+        "return":0,
+        "Balance":0,
         "max": 10
       },
       {
         "id": "recwTo160XST3PIoWwqw1uyitnt",
         "title": "Motorola G2",
-        "price": "999",
+        "price": 1000,
         "img": "https://5.imimg.com/data5/SELLER/Default/2021/9/WI/ZP/XB/58263536/motorola-smart-phone.jpg",
+        "company":"motorola",
         "amount": 0,
         "stars":5,
-        "reviews":120,
+        "return":0,
+        "Balance":0,
         "max": 5
-      },
-      {
-        "id": "recwTo160XST3PIoWwqfkpnqjwqm",
-        "title": "OnePlus 10 Pro",
-        "price": "1299",
-        "img": "https://m.economictimes.com/thumb/msid-102636785,width-1200,height-1200,resizemode-4,imgsize-63600/top-6-oneplus-phones-under-40000.jpg",
-        "amount": 0,
-        "stars":3.5,
-        "reviews":45,
-        "max": 12
       }
     ]
   }

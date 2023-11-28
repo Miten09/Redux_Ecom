@@ -25,7 +25,7 @@ const CartContainer = () => {
   }, []);
 
   console.log("Balance", myBalance);
-  console.log("Total", total);
+  console.log("ADDTOCART", addToCart);
 
   if (amount < 1) {
     return (

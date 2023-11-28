@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 const Modal = () => {
   const dispatch = useDispatch();
-  const { total, myBalance } = useSelector((store) => store.cart);
+  const { total, myBalance, cartItems } = useSelector((store) => store.cart);
 
   const navigate = useNavigate();
 

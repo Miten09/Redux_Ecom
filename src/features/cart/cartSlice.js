@@ -14,6 +14,7 @@ const initialState = {
   cartItems: allCartItems(),
   addToCart: allCartItems(),
   wishList: [],
+  alreadyPurchase: [],
   myBalance: 3000,
   adminFields: "",
   amount: 0,
@@ -29,6 +30,7 @@ const cartSlice = createSlice({
       state.addToCart = [];
       state.wishList = [];
       state.myBalance = 3000;
+      state.alreadyPurchase = [];
     },
     clearAdminFields: (state) => {
       state.adminFields = "";
@@ -54,12 +56,15 @@ const cartSlice = createSlice({
         (item) => item.id === action.payload
       );
       cartItem.amount = cartItem.amount + 1;
+      cartItem.Balance = cartItem.price + cartItem.Balance;
+      cartItem.return = 0;
     },
     decrease: (state, action) => {
       const cartItem = state.cartItems.find(
         (item) => item.id === action.payload
       );
       cartItem.amount = cartItem.amount - 1;
+      cartItem.Balance = cartItem.Balance - cartItem.price;
     },
     calculateTotals: (state) => {
       let amount = 0;
@@ -80,11 +85,63 @@ const cartSlice = createSlice({
       const itemId = action.payload;
       state.cartItems = state.cartItems.filter((item) => item.id !== itemId);
     },
+    // purchaseItems: (state, action) => {
+    //   const updateData = (d) => {
+    //     const data = state.alreadyPurchase;
+    //     const newData = [];
+    //     data.forEach((item) => {
+    //       d.forEach((val) => {
+    //         if (item.id === val.id) {
+    //           const temp = { ...item, amount: item.amount + val.amount };
+    //           newData.push(temp);
+    //         }
+    //       });
+    //     });
+    //     return newData;
+    //   };
+    //   let tempData = [];
+    //   if (state.alreadyPurchase.length > 0) {
+    //     tempData = updateData(state.cartItems);
+    //     console.log("IF", tempData);
+    //   } else {
+    //     tempData = JSON.parse(JSON.stringify(state.cartItems));
+    //     console.log("ELSE", tempData);
+    //   }
+
+    //   state.alreadyPurchase = JSON.parse(JSON.stringify(tempData));
+    //   state.cartItems.forEach((item) => {
+    //     item.max = item.max - item.amount;
+    //     item.amount = 0;
+    //   });
+    //   state.addToCart = state.cartItems;
+    // },
     purchaseItems: (state, action) => {
+      const updateData = (d) => {
+        const newData = [...state.alreadyPurchase];
+        d.forEach((cartItem) => {
+          const existingIndex = newData.findIndex(
+            (item) => item.id === cartItem.id
+          );
+          if (existingIndex !== -1) {
+            newData[existingIndex].amount += cartItem.amount;
+          } else {
+            newData.push(cartItem);
+          }
+        });
+        return newData;
+      };
+      let tempData = [];
+      if (state.alreadyPurchase.length > 0) {
+        tempData = updateData(state.cartItems);
+      } else {
+        tempData = JSON.parse(JSON.stringify(state.cartItems));
+      }
+      state.alreadyPurchase = JSON.parse(JSON.stringify(tempData));
       state.cartItems.forEach((item) => {
-        item.max = item.max - item.amount;
+        item.max -= item.amount;
         item.amount = 0;
       });
+      state.addToCart = state.cartItems;
     },
     edit: (state, action) => {
       const itemId = action.payload;
@@ -134,6 +191,27 @@ const cartSlice = createSlice({
       const id = action.payload;
       state.wishList = state.wishList.filter((item) => item.id !== id);
     },
+    returnOrder: (state, action) => {
+      const id = action.payload;
+      const purchased = state.alreadyPurchase.find((item) => item.id === id);
+      const itemspurchase = state.cartItems.find((item) => item.id === id);
+      itemspurchase.max = itemspurchase.max + purchased.return;
+      purchased.amount = purchased.amount - purchased.return;
+      state.myBalance = state.myBalance + purchased.price * purchased.return;
+      purchased.return = 0;
+    },
+    returnItemIncrease: (state, action) => {
+      const increase = state.alreadyPurchase.find(
+        (item) => item.id === action.payload
+      );
+      increase.return = increase.return + 1;
+    },
+    returnItemDecrease: (state, action) => {
+      const decrease = state.alreadyPurchase.find(
+        (item) => item.id === action.payload
+      );
+      decrease.return = decrease.return - 1;
+    },
   },
 });
 
@@ -159,6 +237,9 @@ export const {
   addBalance,
   addWishListItems,
   removeWishListItems,
+  returnOrder,
+  returnItemIncrease,
+  returnItemDecrease,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

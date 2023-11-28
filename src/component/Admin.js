@@ -51,7 +51,7 @@ const Admin = () => {
                   +
                 </p>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <p>Items Remaining - {val.max}</p>&nbsp;&nbsp;&nbsp;&nbsp;
+                <p>Available(In Stocks) - {val.max}</p>&nbsp;&nbsp;&nbsp;&nbsp;
                 <p
                   style={{
                     border: "2px solid red",
