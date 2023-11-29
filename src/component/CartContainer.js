@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
-import cartItems from "../CartItems";
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from "./CartItem";
-import { clearCart } from "../features/cart/cartSlice";
-import { closeModal, openModal } from "../features/modal/modalSlice";
+import { openModal } from "../features/modal/modalSlice";
 import { useNavigate } from "react-router-dom";
-import { Modal } from "@mui/material";
 
 const CartContainer = () => {
   const dispatch = useDispatch();
@@ -23,9 +20,6 @@ const CartContainer = () => {
       navigate("/login");
     }
   }, []);
-
-  console.log("Balance", myBalance);
-  console.log("ADDTOCART", addToCart);
 
   if (amount < 1) {
     return (

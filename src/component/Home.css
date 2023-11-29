@@ -1,18 +1,18 @@
-/* Home.css */
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 2 columns with equal width */
-    gap: 20px; /* Add some spacing between grid items */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
   }
   
   .grid-item {
-    text-align: center; /* Center-align items in the grid */
-    border: 1px solid #ccc; /* Add a border for each grid item */
-    padding: 20px; /* Add padding to the grid items */
+    text-align: center; 
+    border: 1px solid #ccc; 
+    padding: 20px; 
   }
   
   img {
-    max-width: 50%; /* Set the maximum width of images to 50% */
+    max-width: 50%;
   }
   
   .but {

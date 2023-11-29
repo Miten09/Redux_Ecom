@@ -17,8 +17,8 @@ body {
 
 .grid-container123 {
     display: flex;
-    grid-template-columns: repeat(4, 1fr); /* 2 columns with equal width */
-    gap: 20px; /* Add some spacing between grid items */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
   }
   label {
     font-weight: bold;

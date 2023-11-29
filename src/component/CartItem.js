@@ -1,18 +1,15 @@
 import React, { useEffect } from "react";
 import { ChevronDown, ChevronUp } from "../icons";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   cartItemZero,
   decrease,
   increase,
   removeItem,
-  removeItemHome,
 } from "../features/cart/cartSlice";
-import { useNavigate } from "react-router-dom";
 
 const CartItem = ({ id, img, title, price, amount, max, upda }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   return (
     <article className="cart-item">

@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 const WishListItems = () => {
   const select = useSelector((state) => state.cart.wishList);
-  console.log("SELECT", select);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

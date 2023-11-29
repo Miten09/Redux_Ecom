@@ -3,7 +3,6 @@ import { CartIcon } from "../icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import { authFalse, authTrue } from "../features/auth/authSlice";
-import { useEffect } from "react";
 import { clearCart } from "../features/cart/cartSlice";
 
 const Navbar = () => {

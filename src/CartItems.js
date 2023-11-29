@@ -15,8 +15,7 @@ import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { TextField } from "@mui/material";
+import Select from "@mui/material/Select";
 
 function CartItems() {
   const cartItemAmounts = useSelector((store) => store.cart.cartItems);
@@ -35,8 +34,6 @@ function CartItems() {
     }
   }, [inView]);
 
-  // const cartItemsFromJson = allCartItems();
-  // console.log("CARTITEMSFROMJSON", data);
   const display = data.slice(0, displayedItems);
 
   const maxAmountNotZero = display.filter((val) => val.max > 0);
@@ -49,13 +46,11 @@ function CartItems() {
       const lowToHigh = [...itemData].sort(
         (valA, valB) => valA.price - valB.price
       );
-      console.log("LOWTOHIGH", lowToHigh);
       setItemData(lowToHigh);
     } else if (selectOption === "Price(High to Low)") {
       const highToLow = [...itemData].sort(
         (valA, valB) => valB.price - valA.price
       );
-      console.log("HIGHTOLOW", highToLow);
       setItemData(highToLow);
     } else if (selectOption === "a to z") {
       function compare(a, b) {
@@ -68,7 +63,6 @@ function CartItems() {
         return 0;
       }
       const aToZ = [...itemData].sort(compare);
-      console.log("ATOZ", aToZ);
       setItemData(aToZ);
     } else if (selectOption === "z to a") {
       function compare(a, b) {
@@ -81,7 +75,6 @@ function CartItems() {
         return 0;
       }
       const zToA = [...itemData].sort(compare);
-      console.log("ZTOA", zToA);
       setItemData(zToA);
     }
   }, [selectOption]);

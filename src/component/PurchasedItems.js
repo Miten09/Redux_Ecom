@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  allCartItems,
   returnItemDecrease,
   returnItemIncrease,
   returnOrder,
@@ -10,7 +9,6 @@ import "./PurchasedItems.css";
 
 const PurchasedItems = () => {
   const purchased = useSelector((store) => store.cart.alreadyPurchase);
-  console.log("After", purchased);
 
   const dispatch = useDispatch();
 
@@ -26,7 +24,7 @@ const PurchasedItems = () => {
             return (
               items.amount > 0 && (
                 <div key={index} className="purchased-item">
-                  <img src={items.img} />
+                  <img src={items.img} alt="purchased Items" />
                   <p>Name - {items.title}</p>
                   <p>Price - Rs {items.price}</p>
                   <p>Purchased Items - {items.amount}</p>

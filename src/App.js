@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from "react-redux";
 import CartContainer from "./component/CartContainer";
 import Navbar from "./component/Navbar";
 import { useEffect } from "react";
-import { calculateTotals, clearAdminFields } from "./features/cart/cartSlice";
+import { calculateTotals } from "./features/cart/cartSlice";
 import Modal from "./component/Modal";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import CartItems from "./CartItems";
 import Login from "./component/Login";
 import Admin from "./component/Admin";
@@ -13,9 +13,7 @@ import WishListItems from "./component/WishListItems";
 import PurchasedItems from "./component/PurchasedItems";
 
 function App() {
-  const { cartItems, addToCart, adminFields } = useSelector(
-    (state) => state.cart
-  );
+  const { cartItems, addToCart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   const open = useSelector((state) => state.modal.isOpen);

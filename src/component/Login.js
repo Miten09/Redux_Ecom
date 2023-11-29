@@ -1,7 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { authTrue } from "../features/auth/authSlice";
 import { LoginCart } from "../features/cart/cartSlice";
 

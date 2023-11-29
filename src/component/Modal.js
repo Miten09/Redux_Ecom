@@ -1,17 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { closeModal } from "../features/modal/modalSlice";
-import {
-  allCartItemsAmountZero,
-  balanceDeducted,
-  clearCart,
-  purchaseItems,
-} from "../features/cart/cartSlice";
+import { balanceDeducted, purchaseItems } from "../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 
 const Modal = () => {
   const dispatch = useDispatch();
-  const { total, myBalance, cartItems } = useSelector((store) => store.cart);
+  const { total, myBalance } = useSelector((store) => store.cart);
 
   const navigate = useNavigate();
 

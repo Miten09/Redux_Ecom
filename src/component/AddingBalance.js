@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./AddingBalance.css"; // Import the CSS file for styling
+import "./AddingBalance.css";
 import { useDispatch } from "react-redux";
 import { addBalance } from "../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";

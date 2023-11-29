@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  allCartItems,
   deleteoneItemFromAdmin,
   edit,
   maxAmountDecrease,
@@ -21,7 +20,6 @@ const Admin = () => {
       navigate("/login");
     }
   }, []);
-  console.log("DATAAAA", data);
 
   const dispatch = useDispatch();
 

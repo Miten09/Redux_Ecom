@@ -7,9 +7,6 @@ export function allCartItems() {
   return cartItemsFromJson;
 }
 
-// const temp = allCartItems();
-// console.log("MMMMMM", temp);
-
 const initialState = {
   cartItems: allCartItems(),
   addToCart: allCartItems(),
@@ -85,36 +82,6 @@ const cartSlice = createSlice({
       const itemId = action.payload;
       state.cartItems = state.cartItems.filter((item) => item.id !== itemId);
     },
-    // purchaseItems: (state, action) => {
-    //   const updateData = (d) => {
-    //     const data = state.alreadyPurchase;
-    //     const newData = [];
-    //     data.forEach((item) => {
-    //       d.forEach((val) => {
-    //         if (item.id === val.id) {
-    //           const temp = { ...item, amount: item.amount + val.amount };
-    //           newData.push(temp);
-    //         }
-    //       });
-    //     });
-    //     return newData;
-    //   };
-    //   let tempData = [];
-    //   if (state.alreadyPurchase.length > 0) {
-    //     tempData = updateData(state.cartItems);
-    //     console.log("IF", tempData);
-    //   } else {
-    //     tempData = JSON.parse(JSON.stringify(state.cartItems));
-    //     console.log("ELSE", tempData);
-    //   }
-
-    //   state.alreadyPurchase = JSON.parse(JSON.stringify(tempData));
-    //   state.cartItems.forEach((item) => {
-    //     item.max = item.max - item.amount;
-    //     item.amount = 0;
-    //   });
-    //   state.addToCart = state.cartItems;
-    // },
     purchaseItems: (state, action) => {
       const updateData = (d) => {
         const newData = [...state.alreadyPurchase];

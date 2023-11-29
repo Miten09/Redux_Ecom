@@ -2,11 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./AddNewItems.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  addOneItems,
-  addOneItemsToCart,
   addOneItemsToHome,
   clearAdminFields,
-  edit,
   update,
 } from "../features/cart/cartSlice";
 import { v4 as uuidv4 } from "uuid";
@@ -22,11 +19,6 @@ const AddNewItems = () => {
   const dispatch = useDispatch();
 
   let editFields = useSelector((store) => store.cart.adminFields);
-  let all = useSelector((store) => store.cart.cartItems);
-
-  // const [editFields, setEditFields] = useState();
-  console.log("IMAGE", img);
-  console.log("EDIT", editFields);
 
   const idOfEdit = editFields.id;
 
@@ -70,9 +62,6 @@ const AddNewItems = () => {
     setAmount("");
     setMax("");
   }
-
-  // let cartItem = all.find((item) => item.id === editFields.id);
-  // console.log("cartItem", cartItem?.title);
 
   return (
     <div className="container">
